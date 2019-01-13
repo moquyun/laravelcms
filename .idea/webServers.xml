@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1f04c337-4311-4bfd-92d7-8d76736d5836" name="apimoquyun" url="http://118.126.102.188">
+        <fileTransfer host="118.126.102.188" port="8622" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="8622" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
