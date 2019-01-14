@@ -14,3 +14,10 @@ inspectionProfiles/
 workspace.xml
 /.idea
 .idea/dataSources.local.xml
+.DS_Store
+Modules/.DS_Store
+Modules/Admin/.DS_Store
+Modules/Admin/Resources/.DS_Store
+Modules/Admin/Resources/views/.DS_Store
+app/.DS_Store
+bootstrap/cache

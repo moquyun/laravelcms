@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link href="{{ asset('theme/admin/css/bootstrap.min.css?v=3.3.6') }}" rel="stylesheet">
     <link href="{{ asset('theme/admin/css/font-awesome.css?v=4.4.0') }}" rel="stylesheet">
-
+    <link href="{{ asset('theme/admin/css/plugins/iCheck/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('theme/admin/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('theme/admin/css/style.css?v=4.1.0') }}" rel="stylesheet">
     <link href="{{ asset('theme/admin/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
@@ -28,7 +28,15 @@
 
 <!-- 自定义js -->
 <script src="{{ asset('theme/admin/js/content.js') }}"></script>
-
+<script src="{{ asset('theme/admin/js/plugins/iCheck/icheck.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
 <!-- toastr -->
 <script src="{{ asset('theme/admin/js/plugins/toastr/toastr.min.js') }}"></script>
 

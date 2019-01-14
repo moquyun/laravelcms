@@ -13,7 +13,8 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin', 'namespace' => 'Module
     Route::get('/', 'AdminController@master');
     //Mian-Index
     Route::get('/index', 'AdminController@index');
-
+    //角色管理
     Route::resource('role','RoleController');
-
+    Route::get('role/permission/{role}','RoleController@permission');
+    Route::post('role/permission/{role}','RoleController@permissionStore');
 });

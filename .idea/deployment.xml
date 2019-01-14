@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="apimoquyun" uploadOnCheckin="1f04c337-4311-4bfd-92d7-8d76736d5836">
+  <component name="PublishConfigData" autoUpload="Always" serverName="apimoquyun" uploadOnCheckin="1f04c337-4311-4bfd-92d7-8d76736d5836">
     <serverData>
       <paths name="apimoquyun">
         <serverdata>
@@ -11,6 +11,6 @@
       </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="apimoquyun" />
-    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

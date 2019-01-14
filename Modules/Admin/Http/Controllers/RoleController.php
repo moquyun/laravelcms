@@ -34,31 +34,24 @@ class RoleController extends Controller
         return back();
     }
 
-    /**
-     * Show the specified resource.
-     * @return Response
-     */
-    public function show()
-    {
-        return view('admin::show');
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('admin::edit');
-    }
 
     /**
      * Update the specified resource in storage.
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request)
+    public function update(RoleRequest $request,Role $role)
     {
+        $role->update(['name'=>$request->name,'title'=>$request->title]);
+        session()->flash('success','角色修改成功');
+        return back();
+
+       /*
+         Role::update(['name'=>$request->name,'title'=>$request->title]);
+        session()->flash('success','角色修改成功');
+        return back();
+        */
     }
 
     /**
@@ -67,5 +60,19 @@ class RoleController extends Controller
      */
     public function destroy()
     {
+    }
+
+    public function permission(Role $role)
+    {
+        $modules = \HDModule::getPermissionByGuard('admin');
+        return view('admin::role.permission',compact('role','modules'));
+    }
+
+    public function permissionStore(Request $request,Role $role)
+    {
+        $role->syncPermissions($request->name);
+        session()->flash('success','权限设置成功');
+        return back();
+
     }
 }
