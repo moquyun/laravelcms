@@ -34,31 +34,24 @@ class RoleController extends Controller
         return back();
     }
 
-    /**
-     * Show the specified resource.
-     * @return Response
-     */
-    public function show()
-    {
-        return view('admin::show');
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('admin::edit');
-    }
 
     /**
      * Update the specified resource in storage.
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request)
+    public function update(RoleRequest $request,Role $role)
     {
+        $role->update(['name'=>$request->name,'title'=>$request->title]);
+        session()->flash('success','角色修改成功');
+        return back();
+
+       /*
+         Role::update(['name'=>$request->name,'title'=>$request->title]);
+        session()->flash('success','角色修改成功');
+        return back();
+        */
     }
 
     /**
@@ -67,5 +60,10 @@ class RoleController extends Controller
      */
     public function destroy()
     {
+    }
+
+    public function permission(Role $role)
+    {
+        return view('admin::role.permission',compact('role'));
     }
 }

@@ -3,12 +3,11 @@
 return [
     [
         "title"      => "系统管理",
-        "icon"       => "fa fa-navicon",
+        "icon"       => "fa fa-desktop",
         'permission' => '权限标识',
         "menus"      => [
             ["title" => "网站配置", "permission" => "权限标识", "url" => "链接地址"],
             ["title" => "微信配置", "permission" => "权限标识", "url" => "链接地址"],
-            ["title" => "右键配置配置", "permission" => "权限标识", "url" => "链接地址"],
             ["title" => "权限管理", "permission" => "权限标识", "url" => "/admin/role"],
         ],
     ],
