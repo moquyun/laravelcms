@@ -12,3 +12,5 @@ yarn-error.log
 .gitignore
 inspectionProfiles/
 workspace.xml
+/.idea
+.idea/dataSources.local.xml
