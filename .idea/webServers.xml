@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="1f04c337-4311-4bfd-92d7-8d76736d5836" name="apimoquyun" url="http://118.126.102.188">
-        <fileTransfer host="118.126.102.188" port="8622" accessType="SFTP">
+        <fileTransfer host="118.126.102.188" port="8622" rootFolder="/www/wwwroot/api" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
