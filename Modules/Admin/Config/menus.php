@@ -2,6 +2,17 @@
 
 return [
     [
+        "title"      => "系统管理",
+        "icon"       => "fa fa-navicon",
+        'permission' => '权限标识',
+        "menus"      => [
+            ["title" => "网站配置", "permission" => "权限标识", "url" => "链接地址"],
+            ["title" => "微信配置", "permission" => "权限标识", "url" => "链接地址"],
+            ["title" => "右键配置配置", "permission" => "权限标识", "url" => "链接地址"],
+            ["title" => "权限管理", "permission" => "权限标识", "url" => "/admin/role"],
+        ],
+    ],
+    [
         "title"      => "报表管理",
         "icon"       => "fa fa-star",
         'permission' => '权限标识',
@@ -109,16 +120,6 @@ return [
             ["title" => "最近每天佣金数", "permission" => "权限标识", "url" => "链接地址"],
         ],
     ],
-    [
-        "title"      => "系统管理",
-        "icon"       => "fa fa-navicon",
-        'permission' => '权限标识',
-        "menus"      => [
-            ["title" => "网站配置", "permission" => "权限标识", "url" => "链接地址"],
-            ["title" => "微信配置", "permission" => "权限标识", "url" => "链接地址"],
-            ["title" => "右键配置配置", "permission" => "权限标识", "url" => "链接地址"],
-            ["title" => "权限管理", "permission" => "权限标识", "url" => "链接地址"],
-        ],
-    ],
+
 ];
 
