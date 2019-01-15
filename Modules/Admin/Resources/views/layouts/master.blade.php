@@ -17,6 +17,9 @@
 </head>
 
 <body class="gray-bg">
+
+
+
     <div class="wrapper wrapper-content animated fadeInUp">
         @include('layouts._error')
         @yield('content')
@@ -39,8 +42,8 @@
     </script>
 <!-- toastr -->
 <script src="{{ asset('theme/admin/js/plugins/toastr/toastr.min.js') }}"></script>
-
 @include('layouts._message')
+@yield('scripts')
 </body>
 
 </html>

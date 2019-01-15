@@ -15,9 +15,9 @@ class AdminSeeder extends Seeder
 
         $user = $users[0];
         $user->name = 'admin';
-        $user->nickname = '超级管理员';
+        $user->nickname = '管理员';
         $user->save();
-
+        /* */
         $usera = $users[1];
         $usera->name = 'dbg8685';
         $usera->password = bcrypt('dbg8685');
@@ -26,11 +26,11 @@ class AdminSeeder extends Seeder
         $usera->save();
 
         \Spatie\Permission\Models\Role::create([
-            'title' => '管理员',
-            'name' => 'admin',
+            'title' => '超级管理员',
+            'name' => 'webmaster',
             'guard_name' => 'admin'
         ]);
-        $user->assignRole('admin');
-        //$usera->assignRole('admin');
+        $user->assignRole('webmaster');
+        $usera->assignRole('webmaster');
     }
 }

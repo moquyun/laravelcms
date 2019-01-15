@@ -8,8 +8,8 @@
                     <span><img alt="image" class="img-circle" src="theme/admin/img/profile_small.jpg" /></span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
-                               <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
-                                <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                               <span class="block m-t-xs"><strong class="font-bold">{{ Auth::user()->name }}</strong></span>
+                                <span class="text-muted text-xs block">{{Auth::user()->nickname}}<b class="caret"></b></span>
                                 </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -47,21 +47,24 @@
             @foreach(app('hd-menu')->all() as $moduleName => $groups)
 
                 @foreach($groups as $group)
-            <li>
-                <a href="#">
-                    <i class="{{$group['icon']}}"></i>
-                    <span class="nav-label">{{$group['title']}}</span>
-                    <span class="fa arrow"></span>
-                </a>
-                <ul class="nav nav-second-level">
-                    @foreach($group['menus'] as $menus)
+                    @if(\HDModule::hadPermission($group['permission'],'admin'))
                     <li>
-                        <a class="J_menuItem" href="{{$menus['url']}}">{{$menus['title']}}</a>
+                        <a href="#">
+                            <i class="{{$group['icon']}}"></i>
+                            <span class="nav-label">{{$group['title']}}</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            @foreach($group['menus'] as $menus)
+                                @if(\HDModule::hadPermission($menus['permission'],'admin'))
+                                <li>
+                                    <a class="J_menuItem" href="{{$menus['url']}}">{{$menus['title']}}</a>
+                                </li>
+                                @endif
+                            @endforeach
+                        </ul>
                     </li>
-
-                    @endforeach
-                </ul>
-            </li>
+                    @endif
                 @endforeach
             @endforeach
 
